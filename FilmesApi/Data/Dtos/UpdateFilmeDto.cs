@@ -1,18 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FilmesApi.Models;
+namespace FilmesApi.Data.Dtos;
 
-public class Filme
+public class UpdateFilmeDto
 {
-    [Key]
-    [Required]
-    public int Id { get; set; }
 
     [Required(ErrorMessage = "O Título do filme é obrigatório")]
     public string? Titulo { get; set; }
-   
+
     [Required(ErrorMessage = "O Gênero do filme é obrigatório")]
-    [MaxLength(50, ErrorMessage = "O Tamanho do gênero não pode exceder 50 caracteres")]
+    [StringLength(50, ErrorMessage = "O Tamanho do gênero não pode exceder 50 caracteres")]
 
     public string? Genero { get; set; }
 
